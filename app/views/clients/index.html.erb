@@ -1,0 +1,37 @@
+<% provide(:title, 'Client List') %>
+<%= will_paginate %>
+	<div class="row">
+	  <aside class="col-md-6">
+	    <section class="user_info">
+	    <ul>
+		 <% @clients.each do |client|%>
+		 <li>
+				<h3 class="client_info">
+					Client ID: <%= client.id%>
+					<br>
+					<div> Client Name: <%= client.name %> </div>
+					<div>
+						<% if client.init_checker == true %>
+						Data feed completed! 
+						<%else%>
+						Data not initialised!
+						<%end%>
+					</div>
+					<div>
+						<a href="/clients/<%= client.id%>/edit" class="btn btn-warning">Edit Client</a>
+						<%= link_to "Toggle Status", client, class: "btn btn-warning", method: :post, data: {confirm: "Client init status will be toggled, are you sure?"}%>
+						<%= link_to "Delete Client", client, class: "btn btn-danger", method: :delete, data: {confirm: "Client information will be deleted, are you sure?"}%>
+					</div>
+				</h2>
+		 </li>
+	     <% end %>  
+	    </ul>
+	    </section>
+	  </aside>
+	</div>
+<%= will_paginate %>
+<div class="row">
+	<div class="col-md-offset-4">
+		<a href="/clients/new" class="btn btn-primary btn-lg">Add New Client</a>	
+	</div>
+</div>

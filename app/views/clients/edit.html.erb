@@ -1,0 +1,24 @@
+<% provide(:title, 'Edit Client Info') %>
+<h1>Update Client Info</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@client) do |c| %>
+      <%= render 'shared/client_error_messages' %>
+
+      <%= c.label "Client Name" %>
+      <%= c.text_field :name, class: 'form-control' %>
+
+      <%= c.label "Xml Endpoint" %>
+      <%= c.text_field :xml_endpoint, class: 'form-control' %>
+
+      <%= c.label "Marketplacer API Key" %>
+      <%= c.text_field :mk_apikey, class: 'form-control' %>
+      
+      <%= c.label "Marketplacer Endpoint" %>
+      <%= c.text_field :mk_endpoint, class: 'form-control' %>
+
+      <%= c.submit "Save Info Change", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
