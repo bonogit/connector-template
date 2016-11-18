@@ -24,10 +24,10 @@ lana:
   activated: true
   activated_at: <%= Time.zone.now%>
 
-<% 30.times do |n|%>
-  name: <%= "User #{n}" %>
-  email: <%= "user-#{n}@email.com"%>
-  password_digest: <%= User.digest('password')%>
-  activated: true
-  activated_at: <%= Time.zone.now %> 
-<% end %>
+# <% 30.times do |n|%>
+#   name: <%= "User #{n}" %>
+#   email: <%= "user-#{n}@email.com"%>
+#   password_digest: <%= User.digest('password')%>
+#   activated: true
+#   activated_at: <%= Time.zone.now %> 
+# <% end %>

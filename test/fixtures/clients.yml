@@ -1,21 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  bigcom_id: MyString
+ipso:
   name: MyString
-  bigcom_user: MyString
-  bigcom_token: MyString
-  bigcom_endpoint: MyString
+  xml_endpoint: MyString
   mk_apikey: MyString
   mk_endpoint: MyString
   init_checker: false
 
-two:
-  bigcom_id: MyString
+corner:
   name: MyString
-  bigcom_user: MyString
-  bigcom_token: MyString
-  bigcom_endpoint: MyString
+  xml_endpoint: MyString
   mk_apikey: MyString
   mk_endpoint: MyString
   init_checker: false
