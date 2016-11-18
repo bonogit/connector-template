@@ -28,6 +28,15 @@ class ClientsController < ApplicationController
 
   def show
   	@client = Client.find(params[:id])
+    @credential_valid_tag = false 
+    # woo_account = Product.setup_woocommerce params[:id]
+    # mk_account  = Marketplacer::Base.new(@client.mk_endpoint, @client.mk_apikey)
+    # mk_tester =   Marketplacer::Advert.new(mk_account)
+    # if woo_account.woo_key_valid? && mk_tester.mk_key_valid?
+    #   @credential_valid_tag = true
+    # else
+    #   @credential_valid_tag = false
+    # end
   end
   def index
   	@clients = Client.order(:id).paginate(page: params[:page], per_page: 5)

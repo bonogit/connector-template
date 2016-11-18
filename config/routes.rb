@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
-  root             'static_tests#home'
+  root             'general#home'
   
   get 'password_resets/new'
   get 'password_resets/edit'
 
-  # get 'home'    => 'static_tests#home'
-  get 'help'    => 'static_tests#help'
-  get 'about'   => 'static_tests#about'
-  get 'contact' => 'static_tests#contact'
+  get 'about'   => 'general#about'
+  get 'contact' => 'general#contact'
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

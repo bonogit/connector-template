@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StaticTestsControllerTest < ActionController::TestCase
+class GeneralControllerTest < ActionController::TestCase
 
   def setup
   	@base_title = 'Ruby on Rails Tutorial Sample App'

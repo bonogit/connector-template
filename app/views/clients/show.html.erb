@@ -1,0 +1,17 @@
+<% provide(:title, @client.name) %>
+<div class="row">
+  <aside class="col-md-6">
+    <section class="user_info">
+      <h1>
+      Retailer Name: <%= @client.name %>
+      </h1>
+      <h1>
+      <% if @credential_valid_tag %>
+        The retailer API credential is valid!
+      <% else %>
+        The retailer API credentail is not valid! Please check account details.
+      <% end %>
+      </h1>
+    </section>
+  </aside>
+</div>
