@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
@@ -27,22 +27,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'faker',                   '1.6.3'
+
 gem 'mini_magick',             '3.8.0'
 gem 'fog',                     '1.36.0'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass',          '3.2.0.0'
 
-# gem 'vending-machine'
-# gem 'carrierwave',             '0.10.0'
-# gem 'paperclip', '~>4.3'
-
 gem 'httparty'
 gem 'httmultiparty', '~>0.3.16'
 gem 'mimemagic'
 
-
+# delay job for active record
+gem 'delayed_job_active_record', '4.1.1'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -52,10 +49,10 @@ gem 'mimemagic'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # gem 'sqlite3',     '1.3.9'
-  # gem 'web-console', '2.0.0.beta3'
+  gem 'web-console', '2.0.0.beta3'
   gem 'spring'
   gem 'dotenv-rails'
+  gem 'faker',                   '1.6.3'
 end
 
 group :test do
@@ -65,7 +62,8 @@ group :test do
 end
 
 group :production do
-  # gem 'pg'
+  # use daemons gem for delay job running on heroku
+  gem 'daemons'
   gem 'rails_12factor', '0.0.2'
   gem 'puma',           '3.1.0'
 end
